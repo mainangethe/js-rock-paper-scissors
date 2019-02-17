@@ -1,0 +1,31 @@
+html { height: 100%; font-family: Roboto; }
+
+header, h2 { text-align: center;}
+
+.game-options {
+  display: flex;
+  flex: 1;
+  min-height: 20vh;
+  justify-content: center;
+}
+
+button {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  height: 150px;
+  width: 150px;
+  border: none;
+  cursor: pointer;
+  margin-right: 30px;
+  padding: 10px 10px;
+}
+
+button span { font-size: 1.3rem; }
+
+
+#rock { background-image: url(resources/images/landslide.png); }
+#paper { background-image: url(resources/images/document.png); }
+#scissors { background-image: url(resources/images/scissors.png); }
+
+.game-results { text-align: center; }

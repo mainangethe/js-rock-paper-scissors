@@ -1,14 +1,22 @@
+const buttons = document.querySelectorAll('button');
+const scoresTable = document.getElementById('Standings');
+const results = scoresTable.insertRow();
 const computer_options =  [
                             'Rock',
                             'Paper',
                             'Scissors'
                           ];
+
+buttons.forEach(button => button.addEventListener('click', playRound));
 let player_wins_stats = 0;
 let computer_wins_stats = 0;
 let gameTurns = 0;
 
+let computerScores = results.insertCell();
+let playerScores = results.insertCell();
+
 function playRound(event) {
-  //let user_choice = userPlay();
+
   if (event == null) return;
   let user_choice = event.target.id;
   let computer_choice = computerPlay();
@@ -18,14 +26,10 @@ function playRound(event) {
   game();
 
 }
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', playRound));
-
 function computerPlay() {
   let computer_choice = computer_options[ Math.floor( Math.random() * 3 ) ];
   return computer_choice;
 }
-
 function getRoundWinner( user_choice, computer_choice ) {
 
   let player_wins = `You Win! ${ user_choice } beats ${ computer_choice }.`;
@@ -74,17 +78,11 @@ function getRoundWinner( user_choice, computer_choice ) {
   }
 
 }
-
 function addTurns() { gameTurns++; }
 function addPlayerWin() { ++player_wins_stats; }
 function getPlayerWins() { return player_wins_stats; }
 function addComputerWin() { ++computer_wins_stats; }
 function getComputerWins() { return computer_wins_stats; }
-scoresTable = document.getElementById('Standings');
-let results = scoresTable.insertRow();
-let computerScores = results.insertCell();
-let playerScores = results.insertCell();
-
 function displayGameScores() {
   computerScores.textContent = getComputerWins();
   playerScores.textContent = getPlayerWins();
@@ -107,10 +105,10 @@ function game() {
     else {
       finalTune = document.querySelector(`audio[data-key='2']`);
     }
+    finalTune.play();
   }
-  finalTune.play();
-}
 
+}
 function getGamplayHistory (user_choice, computer_choice) {
   let resultsSection = document.querySelector('.game-results');
   let roundResult = document.createElement('p');
