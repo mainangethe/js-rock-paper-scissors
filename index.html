@@ -3,13 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <header>
+      <h1>Rock, Paper, Scissors</h1>
+      <p>Settle your scores with your compuer with this classic game.</p>
+      <p> You have 5 turns before the game ends and we decide the winner. </p>
+    </header>
+
     <div class="game-options">
       <button id="Rock">Rock</button>
       <button id="Paper">Paper</button>
       <button id="Scissors">Scissors</button>
     </div>
+
     <div class="game-results">
       <h2>Scores</h2>
       <table id="Standings">
@@ -17,7 +25,8 @@
           <th>Computer</th> <th>Player</th>
         </tr>
       </table>
-      <h2 id="history">History</h2>
+
+      <h2 id="history">Game History</h2>
     </div>
 
     <audio data-key="1" src="resources/sounds/game-over.wav"></audio>

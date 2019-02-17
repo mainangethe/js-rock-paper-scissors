@@ -24,8 +24,19 @@ button {
 button span { font-size: 1.3rem; }
 
 
-#rock { background-image: url(resources/images/landslide.png); }
-#paper { background-image: url(resources/images/document.png); }
-#scissors { background-image: url(resources/images/scissors.png); }
+#Rock { background-image: url(resources/images/landslide.png); }
+#Paper { background-image: url(resources/images/document.png); }
+#Scissors { background-image: url(resources/images/scissors.png); }
 
 .game-results { text-align: center; }
+.game-results p { font-size: .9rem; font-style: italic;
+}
+table {
+  width: 300px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+tr { height: 50px; }
+th { text-transform: uppercase; background-color: hsl(134,0%, 83%); }
+td { font-size: 3rem;}

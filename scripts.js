@@ -95,7 +95,7 @@ function game() {
 
   if (gameTurns == game_rounds) {
     buttons.forEach(button => button.disabled = true);
-    //gameOverTune.play();
+
     if (player_wins_stats > computer_wins_stats) {
       finalTune = document.querySelector(`audio[data-key = "3"]`);
     }
@@ -112,6 +112,6 @@ function game() {
 function getGamplayHistory (user_choice, computer_choice) {
   let resultsSection = document.querySelector('.game-results');
   let roundResult = document.createElement('p');
-  roundResult.textContent = getRoundWinner( user_choice, computer_choice );
+  roundResult.textContent = `Round ${gameTurns}: ` +getRoundWinner( user_choice, computer_choice );
   resultsSection.appendChild(roundResult);
 }
